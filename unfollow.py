@@ -39,12 +39,12 @@ if __name__ == "__main__":
                 if data:
                     dont_follow = data.get('dont_follow_back')
                     print('\n')
+                    print('Not following: ', end='')
                     for user in dont_follow:
                         if user == dont_follow[-1]:
                             print(user)
                             break
                         print(user, end=', ')
-                    print('\n')
             if command == 2:
                 recently_unfollowed = list(filter(lambda x: x not in data.get('followers'),
                                                   old_data.get('followers', [])))
